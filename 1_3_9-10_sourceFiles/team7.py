@@ -11,8 +11,10 @@ strategy_name = 'ccopy'
 strategy_description = 'Our stratagy works off of collude first two rounds than copying the oponents last move all the way through.'
     
 def move(my_history, their_history, my_score, their_score):
-    if len(my_history)<2:  #first round
+    if len(my_history)<1:  #first round
         return 'c'
+     elif len(my_history)>198:
+        return 'b'
     else:
         return (their_history[-1])
 def test_move(my_history, their_history, my_score, their_score, result):
